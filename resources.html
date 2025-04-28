@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="resources-container">
+        <h2>Mental Health Resources</h2>
+        <p>Here are some helpful resources to support your mental health:</p>
+
+        <ul class="resource-list">
+            <li><a href="https://www.mind.org.uk/" target="_blank">Mind - Mental Health Charity</a></li>
+            <li><a href="https://www.headspace.com/" target="_blank">Headspace - Meditation and Sleep</a></li>
+            <li><a href="https://www.nami.org/Home" target="_blank">NAMI - National Alliance on Mental Illness</a></li>
+            <li><a href="https://positivepsychology.com/" target="_blank">Positive Psychology</a></li>
+            <li><a href="https://www.youtube.com/watch?v=2OEL4P1Rz04" target="_blank">Relaxing Music for Stress Relief</a></li>
+        </ul>
+
+        <p>
+            <a href="https://form.jotform.com/251096819422460" target="_blank" class="mental-health-test">
+                Take a Mental Health Test
+            </a>
+        </p>
+
+        <div class="sos-section">
+            <h3>Need Immediate Help?</h3>
+            <p><strong>Call India Mental Health Helpline:</strong> <a href="tel:14416">14416</a> or <a href="tel:112">112</a> for emergencies.</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .resources-container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .resource-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .resource-list li {
+            margin: 10px 0;
+        }
+
+        .resource-list a {
+            font-size: 1.1em;
+            text-decoration: none;
+            color: #0066cc;
+        }
+
+        .resource-list a:hover {
+            color: #004d99;
+        }
+
+        .mental-health-test {
+            font-size: 1.2em;
+            color: #4c8bf5;
+            text-decoration: none;
+        }
+
+        .mental-health-test:hover {
+            color: #337ab7;
+        }
+
+        .sos-section {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #ffe0e0;
+            border-left: 6px solid #ff4d4d;
+            border-radius: 6px;
+        }
+
+        .sos-section h3 {
+            margin-top: 0;
+            color: #cc0000;
+        }
+
+        .sos-section a {
+            color: #cc0000;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+{% endblock %}

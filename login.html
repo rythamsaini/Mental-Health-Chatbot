@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='robot_icon.png') }}">
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Flash Messages */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        ul li {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        ul li.success {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        ul li.error {
+            background-color: #f44336;
+            color: white;
+        }
+
+        /* Form styling */
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .toggle-form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .toggle-form a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .toggle-form a:hover {
+            text-decoration: underline;
+        }
+
+        /* Dark Mode Styles */
+        .dark-theme {
+            background: #222;
+            color: white;
+        }
+
+        .dark-theme .container {
+            background: #333;
+        }
+
+        .dark-theme h2 {
+            color: white;
+        }
+
+        .dark-theme input[type="text"],
+        .dark-theme input[type="password"] {
+            background-color: #444;
+            color: white;
+            border: 1px solid #555;
+        }
+
+        .dark-theme button {
+            background-color: #357ab7;
+        }
+
+        .dark-theme button:hover {
+            background-color: #4c8bf5;
+        }
+
+        .dark-theme ul li.success {
+            background-color: #2e7d32;
+        }
+
+        .dark-theme ul li.error {
+            background-color: #d32f2f;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5em;
+                width: 90%;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>{% if register %}Register{% else %}Login{% endif %}</h2>
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Registration Form -->
+        {% if register %}
+            <form method="POST">
+                <input type="text" name="username" placeholder="Username" required><br><br>
+                <input type="password" name="password" placeholder="Password" required><br><br>
+                <input type="password" name="confirm_password" placeholder="Confirm Password" required><br><br>
+                <button type="submit">Register</button>
+            </form>
+            <div class="toggle-form">
+                <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+            </div>
+        {% else %}
+            <!-- Login Form -->
+            <form method="POST">
+                <input type="text" name="username" placeholder="Username" required><br><br>
+                <input type="password" name="password" placeholder="Password" required><br><br>
+                <button type="submit">Login</button>
+            </form>
+            <div class="toggle-form">
+                <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a></p>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        // Toggle theme functionality
+        const themeBtn = document.getElementById('theme-button');
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="welcome-text">Welcome, {{ username }}!</h2>
+
+
+<!-- Chatbox -->
+<div id="chatbox" style="width: 100%; height: 300px; overflow-y: auto; background-color: #fff; border-radius: 8px; padding: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <!-- Chat messages will be dynamically inserted here -->
+</div>
+
+<!-- User input area -->
+<div class="input-area" style="display: flex; margin-top: 10px;">
+    <input type="text" id="user_input" placeholder="Type your message..." autocomplete="off" style="flex-grow: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-right: 10px;">
+    <button onclick="sendMessage()" style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Send</button>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

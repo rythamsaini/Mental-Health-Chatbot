@@ -1,0 +1,179 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f3f3f3;
+    margin: 0;
+}
+
+nav {
+    background: #4c8bf5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.nav-left a {
+    color: white;
+    margin-right: 1em;
+    text-decoration: none;
+}
+
+.robot-icon {
+    width: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 2em auto;
+    background: white;
+    padding: 2em;
+    border-radius: 10px;
+}
+
+/* Dark Mode */
+.dark-theme {
+    background: #222;
+    color: white;
+}
+
+.dark-theme .container {
+    background: #333;
+}
+
+.dark-theme #chatbox {
+    background: #555;
+}
+
+/* Light Mode */
+body {
+    color: #333;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+#chatbox {
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin-bottom: 1em;
+    background: #f9f9f9;
+}
+
+/* Dark Theme Customization */
+.dark-theme #chatbox {
+    background: #555;
+}
+
+.dark-theme input[type="text"], .dark-theme button {
+    background-color: #444;
+    color: white;
+    border: 1px solid #666;
+}
+
+.dark-theme button {
+    background-color: #4c8bf5;
+}
+
+.dark-theme .resources-text, .dark-theme .about-text {
+    color: white;
+}
+
+/* Resources and About Page Specific Styles */
+.resources-container, .container {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.resources-container h2, .container h2, .container h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.resources-container p, .container p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.resource-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resource-list li {
+    margin: 10px 0;
+}
+
+.resource-list a {
+    font-size: 1.1em;
+    text-decoration: none;
+    color: #0066cc;
+}
+
+.resource-list a:hover {
+    color: #004d99;
+}
+
+.mental-health-test {
+    font-size: 1.2em;
+    color: #4c8bf5;
+    text-decoration: none;
+}
+
+.mental-health-test:hover {
+    color: #337ab7;
+}
+
+/* Dark Mode Styles for About and Resources Page */
+.dark-theme .container, .dark-theme .resources-container {
+    background-color: #333;
+}
+
+.dark-theme .container h2, .dark-theme .resources-container h2 {
+    color: white;
+}
+
+.dark-theme .container p, .dark-theme .resources-container p, 
+.dark-theme .resource-list li, .dark-theme .resource-list a, 
+.dark-theme .mental-health-test, .dark-theme .about-text {
+    color: white;
+}
+
+.dark-theme .final-message {
+    color: white;
+}
+
+/* Chatbot styles */
+.input-area {
+    display: flex;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 0.5em;
+}
+
+button {
+    padding: 0.5em 1em;
+    margin-left: 5px;
+}
+
+.flashes {
+    color: red;
+    list-style-type: none;
+}
+
+.chatbot-icon {
+    height: 40px;
+    width: 40px;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 50%;
+}

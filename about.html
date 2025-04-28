@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="about-text">About the Makers</h2>
+    <p class="about-text">This chatbot was crafted with love and care by <strong>Rytham Saini</strong>, <strong>Pratham Pawar</strong>, and <strong>Yashita Agarwala</strong>.</p>
+    <p class="about-text">We are passionate about leveraging technology for mental wellness. Our chatbot offers a safe, anonymous, and empathetic space where individuals can freely express themselves and find immediate support.</p>
+
+    <h3 class="about-text">Features of this platform:</h3>
+    <ul class="about-text">
+        <li>💬 Real-time conversations to lighten your mental burden</li>
+        <li>🧘‍♂️ Guided coping mechanisms for stress and anxiety</li>
+        <li>📚 Resources for reaching professional help when needed</li>
+        <li>🔒 Confidential and user-friendly interactions</li>
+    </ul>
+
+    <p class="final-message about-text">Remember, it’s okay to ask for help. Mental health is just as important as physical health. You are never alone. ❤️</p>
+
+    <div class="test-link">
+        <p class="about-text">Take a moment for yourself: 
+            <a href="https://form.jotform.com/251096819422460" target="_blank">
+                <strong>Try our Mental Health Test</strong>
+            </a>
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        h2, h3, .about-text {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        p, .about-text {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        .test-link a {
+            color: #4c8bf5;
+            font-size: 1.2em;
+        }
+
+        .test-link a:hover {
+            color: #337ab7;
+        }
+
+        /* Dark theme styles for About page */
+        .dark-theme .about-text {
+            color: white;
+        }
+    </style>
+{% endblock %}
